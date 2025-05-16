@@ -1,14 +1,15 @@
 // Pessoa(props);
 
-function Pessoa({ nome, idade, profissao, foto }) {
+const Pessoa = (props) => {
+  console.log(props);
   return (
     <div>
-      <img src={foto} alt={nome} />
-      <h2>Nome: {nome}</h2>
-      <p>Idade: {idade}</p>
-      <p>Profissao: {profissao}</p>
+      <img src={props.foto} alt={props.nome} />
+      <h2>Nome: {props.nome}</h2>
+      <p>Idade: {props.idade}</p>
+      <p>Profissao: {props.profissao}</p>
     </div>
   );
-}
+};
 
-export default Pessoa();
+export default Pessoa;
