@@ -1,0 +1,13 @@
+Props (parâmetros) -> valores passados para os componentes
+deixá-los dinâmicos
+valor é passado como um atributo na chamada do componente
+
+// componente
+Pessoa({nome, foto}) {
+    return(
+        <div>
+            <p>{nome}<p/>
+            <img src={foto} alt={nome} />
+        <div/>
+    );
+}

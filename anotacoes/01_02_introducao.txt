@@ -1,0 +1,24 @@
+react
+* biblioteca de javascript
+* SPA(single page aplication), página única, na versão base
+* componentes -> estruturas reutilizáveis, facilitando o desenvolvimento
+
+
+npx -> temporário
+npm -> permanente
+
+npx create-react-app nome-do-projeto    -> Cria o projeto
+npx create-react-app .                  -> Se já estiver na pasta
+
+npm start   -> Começa a rodar o projeto
+
+npm install  -> instala as dependências necessárias
+npm install react-router-dom  -> instala um pacote de rotas, é um pacote a parte, compatível com o react
+
+README.md  -> arquivo de texto para documentação
+package.json>"dependencies"   -> referencias às dependencias que precisam ser importadas para o projeto, por npm
+node_modules  -> arquivos físicos das dependências em si, muitos códigos em .js e .ts
+.gitignore  -> arquivos que não serão upados para o git, como node_modules, dependências
+
+public>index.html -> index da página (local de pouso do usuário)
+src>index.js -> ponto de partida de fato do app

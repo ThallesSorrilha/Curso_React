@@ -1,0 +1,9 @@
+.jsx -> como se fosse o .html só que para o react
+{} -> interpolar variáveis
+{/*variáveis*/}
+
+function App() {} -> componente
+return() -> retorna um único elemento html processado
+export dafault -> prepara o componente para exportação
+
+className -> para linkar com o css

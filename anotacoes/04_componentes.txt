@@ -1,0 +1,6 @@
+src>components -> barra de componentes
+>arquivos de componentes
+é preciso importá-los
+padrão de nome de componente é PascalCase
+
+<HelloWorld />   -> chamada de componente
