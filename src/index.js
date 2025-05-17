@@ -2,11 +2,13 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 
 // meus componentes
-import Evento from "./QS_Evento/Evento";
+import EstadoComparacao from "./QS_Estado_Compartilhado/EstadoCompartilhado";
+import AtualizadorTela from "./QS_UseState/Atualizador_Tela";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <Evento />
+    <EstadoComparacao />
+    <AtualizadorTela />
   </React.StrictMode>
 );
