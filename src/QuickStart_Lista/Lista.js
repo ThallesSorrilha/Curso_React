@@ -1,4 +1,3 @@
-
 // Array de objetos
 const products = [
   { title: "Cabbage", isFruit: false, id: 1 },
@@ -11,7 +10,7 @@ function Lista() {
   possibilidade de tratá-los */
   const listItems = products.map((product) => (
     <li
-      // identificando os itens a serem carregados
+      // identificando os itens a serem carregados, para o react
       key={product.id}
       style={{
         /* expressão ternária ? : que confere a validade de

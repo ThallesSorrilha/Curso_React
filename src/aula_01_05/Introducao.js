@@ -2,7 +2,7 @@ import HelloWorld from "./components/HelloWorld";
 import SayMyName from "./components/SayMyName";
 import Pessoa from "./components/Pessoa";
 
-function App() {
+function Introducao() {
   const nome = "Thalles";
 
   return (
@@ -23,4 +23,4 @@ function App() {
   );
 }
 
-export default App;
+export default Introducao;
