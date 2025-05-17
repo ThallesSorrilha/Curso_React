@@ -2,11 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 
 // meus componentes
-import Renderizacao from "./QuickStart_Renderizacao_Condicional/Renderizacao";
+import Evento from "./QS_Evento/Evento";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <Renderizacao />
+    <Evento />
   </React.StrictMode>
 );

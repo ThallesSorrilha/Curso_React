@@ -1,5 +1,5 @@
 import Introducao from "../aula_01_05/Introducao";
-import Lista from "../QuickStart_Lista/Lista";
+import Lista from "../QS_Lista/Lista";
 
 function Renderizacao() {
   let logado = false;
