@@ -2,13 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 
 // meus componentes
-import EstadoComparacao from "./QS_Estado_Compartilhado/EstadoCompartilhado";
-import AtualizadorTela from "./QS_UseState/Atualizador_Tela";
+import JogoDaVelha from "./Jogo_da_Velha/Jogo_da_Velha";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <EstadoComparacao />
-    <AtualizadorTela />
+    <JogoDaVelha />
   </React.StrictMode>
 );
