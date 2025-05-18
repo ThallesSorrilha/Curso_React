@@ -1,13 +1,6 @@
-import { useState } from 'react';
-
-function Quadrado() {
-  const [conteudo, setConteudo] = useState(null);
-
-  function responderClique() {
-    setConteudo('X');
-  }
+function Quadrado({ conteudo, noClique }) {
   return (
-    <button className="quadrado" onClick={responderClique}>
+    <button className="quadrado" onClick={noClique}>
       {conteudo}
     </button>
   );
