@@ -4,44 +4,67 @@ import "./estilo.css";
 import Quadrado from "./Quadrado";
 
 function JogoDaVelha() {
-  {
-    /* criação do vetor de estados */
-  }
   const [quadrados, setQuadrados] = useState(Array(9).fill(null));
+  const [x, setX] = useState(true);
 
-  function gerenciarClique(i) {
-    /*
-    É feita uma cópia de quadrados
-    para ser atribuida diretamente copia[i] = "X"
-    por fim, quadrados é atibuida com setQuadrados
-    levando em conta o estado da cópia
-    */
+  function gerenciarQuadrados(i) {
+    if (quadrados[i]) return;
     const copiaQuadrados = quadrados.slice();
-    copiaQuadrados[i] = "X";
+    if (x) {
+      copiaQuadrados[i] = "X";
+    } else {
+      copiaQuadrados[i] = "O";
+    }
     setQuadrados(copiaQuadrados);
+    setX(!x);
   }
 
   return (
     <>
       <div className="linha">
-        <Quadrado conteudo={quadrados[0]} noClique={() => gerenciarClique(0)} />
-        <Quadrado conteudo={quadrados[1]} noClique={() => gerenciarClique(1)} />
-        <Quadrado conteudo={quadrados[2]} noClique={() => gerenciarClique(2)} />
+        <Quadrado
+          conteudo={quadrados[0]}
+          noClique={() => gerenciarQuadrados(0)}
+        />
+        <Quadrado
+          conteudo={quadrados[1]}
+          noClique={() => gerenciarQuadrados(1)}
+        />
+        <Quadrado
+          conteudo={quadrados[2]}
+          noClique={() => gerenciarQuadrados(2)}
+        />
       </div>
       <div className="linha">
-        <Quadrado conteudo={quadrados[3]} noClique={() => gerenciarClique(3)} />
-        <Quadrado conteudo={quadrados[4]} noClique={() => gerenciarClique(4)} />
-        <Quadrado conteudo={quadrados[5]} noClique={() => gerenciarClique(5)} />
+        <Quadrado
+          conteudo={quadrados[3]}
+          noClique={() => gerenciarQuadrados(3)}
+        />
+        <Quadrado
+          conteudo={quadrados[4]}
+          noClique={() => gerenciarQuadrados(4)}
+        />
+        <Quadrado
+          conteudo={quadrados[5]}
+          noClique={() => gerenciarQuadrados(5)}
+        />
       </div>
       <div className="linha">
-        <Quadrado conteudo={quadrados[6]} noClique={() => gerenciarClique(6)} />
-        <Quadrado conteudo={quadrados[7]} noClique={() => gerenciarClique(7)} />
-        <Quadrado conteudo={quadrados[8]} noClique={() => gerenciarClique(8)} />
+        <Quadrado
+          conteudo={quadrados[6]}
+          noClique={() => gerenciarQuadrados(6)}
+        />
+        <Quadrado
+          conteudo={quadrados[7]}
+          noClique={() => gerenciarQuadrados(7)}
+        />
+        <Quadrado
+          conteudo={quadrados[8]}
+          noClique={() => gerenciarQuadrados(8)}
+        />
       </div>
     </>
   );
 }
 
-// export -> indica que essa função pode ser usada fora desse arquivo
-// defaul -> indica que essa é a função principal desse arquivo
 export default JogoDaVelha;

@@ -1,0 +1,11 @@
+Padrão de nomeação de funções:
+onAlgo()   -> relacionado a eventos
+handleAlgo -> para definição de funções
+
+export -> indica que essa função pode ser usada fora desse arquivo
+defaul -> indica que essa é a função principal desse arquivo
+
+É feita uma cópia de quadrados
+para ser atribuida diretamente copia[i] = "X"
+por fim, quadrados é atibuida com gerenciarQuadrados,
+levando em conta o estado da cópia
