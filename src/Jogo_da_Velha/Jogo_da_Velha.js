@@ -38,65 +38,73 @@ function JogoDaVelha() {
         quadrados[a] === quadrados[c]
       ) {
         return quadrados[a];
+      } else if (quadrados.every((quad) => quad !== null)) {
+        return "Empate";
       }
     }
     return null;
   }
 
-  const vencedor = calcularVencedor(quadrados);
+  const resultado = calcularVencedor(quadrados);
   let estado;
-  if (vencedor) {
-    estado = "Vencedor: " + vencedor;
+  if (resultado) {
+    if (resultado === "Empate") {
+      estado = resultado;
+    } else {
+      estado = "Vencedor: " + resultado;
+    }
   } else {
     estado = "Vez de: " + (x ? "X" : "O");
   }
 
   return (
-    <>
-      <div className="estado">{estado}</div>
-      <div className="linha">
-        <Quadrado
-          conteudo={quadrados[0]}
-          noClique={() => gerenciarQuadrados(0)}
-        />
-        <Quadrado
-          conteudo={quadrados[1]}
-          noClique={() => gerenciarQuadrados(1)}
-        />
-        <Quadrado
-          conteudo={quadrados[2]}
-          noClique={() => gerenciarQuadrados(2)}
-        />
+    <div className="aplicacao centralizador">
+      <div className="estado centralizador">{estado}</div>
+      <div className="tabuleiro centralizador">
+        <div className="linha">
+          <Quadrado
+            conteudo={quadrados[0]}
+            noClique={() => gerenciarQuadrados(0)}
+          />
+          <Quadrado
+            conteudo={quadrados[1]}
+            noClique={() => gerenciarQuadrados(1)}
+          />
+          <Quadrado
+            conteudo={quadrados[2]}
+            noClique={() => gerenciarQuadrados(2)}
+          />
+        </div>
+        <div className="linha">
+          <Quadrado
+            conteudo={quadrados[3]}
+            noClique={() => gerenciarQuadrados(3)}
+          />
+          <Quadrado
+            conteudo={quadrados[4]}
+            noClique={() => gerenciarQuadrados(4)}
+          />
+          <Quadrado
+            conteudo={quadrados[5]}
+            noClique={() => gerenciarQuadrados(5)}
+          />
+        </div>
+        <div className="linha">
+          <Quadrado
+            conteudo={quadrados[6]}
+            noClique={() => gerenciarQuadrados(6)}
+          />
+          <Quadrado
+            conteudo={quadrados[7]}
+            noClique={() => gerenciarQuadrados(7)}
+          />
+          <Quadrado
+            conteudo={quadrados[8]}
+            noClique={() => gerenciarQuadrados(8)}
+          />
+        </div>
       </div>
-      <div className="linha">
-        <Quadrado
-          conteudo={quadrados[3]}
-          noClique={() => gerenciarQuadrados(3)}
-        />
-        <Quadrado
-          conteudo={quadrados[4]}
-          noClique={() => gerenciarQuadrados(4)}
-        />
-        <Quadrado
-          conteudo={quadrados[5]}
-          noClique={() => gerenciarQuadrados(5)}
-        />
-      </div>
-      <div className="linha">
-        <Quadrado
-          conteudo={quadrados[6]}
-          noClique={() => gerenciarQuadrados(6)}
-        />
-        <Quadrado
-          conteudo={quadrados[7]}
-          noClique={() => gerenciarQuadrados(7)}
-        />
-        <Quadrado
-          conteudo={quadrados[8]}
-          noClique={() => gerenciarQuadrados(8)}
-        />
-      </div>
-    </>
+    </div>
   );
 }
 

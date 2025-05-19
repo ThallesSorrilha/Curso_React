@@ -9,3 +9,6 @@ defaul -> indica que essa é a função principal desse arquivo
 para ser atribuida diretamente copia[i] = "X"
 por fim, quadrados é atibuida com gerenciarQuadrados,
 levando em conta o estado da cópia
+
+Código apenas dentro de um componente, porém fora de uma
+função, é executado toda vez que o componente re-renderizar
