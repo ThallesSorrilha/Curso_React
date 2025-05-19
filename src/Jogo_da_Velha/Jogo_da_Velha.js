@@ -8,7 +8,7 @@ function JogoDaVelha() {
   const [x, setX] = useState(true);
 
   function gerenciarQuadrados(i) {
-    if (quadrados[i]) return;
+    if (quadrados[i] || calcularVencedor(quadrados)) return;
     const copiaQuadrados = quadrados.slice();
     if (x) {
       copiaQuadrados[i] = "X";
@@ -19,8 +19,41 @@ function JogoDaVelha() {
     setX(!x);
   }
 
+  function calcularVencedor(quadrados) {
+    const lines = [
+      [0, 1, 2],
+      [3, 4, 5],
+      [6, 7, 8],
+      [0, 3, 6],
+      [1, 4, 7],
+      [2, 5, 8],
+      [0, 4, 8],
+      [2, 4, 6],
+    ];
+    for (let i = 0; i < lines.length; i++) {
+      const [a, b, c] = lines[i];
+      if (
+        quadrados[a] &&
+        quadrados[a] === quadrados[b] &&
+        quadrados[a] === quadrados[c]
+      ) {
+        return quadrados[a];
+      }
+    }
+    return null;
+  }
+
+  const vencedor = calcularVencedor(quadrados);
+  let estado;
+  if (vencedor) {
+    estado = "Vencedor: " + vencedor;
+  } else {
+    estado = "Vez de: " + (x ? "X" : "O");
+  }
+
   return (
     <>
+      <div className="estado">{estado}</div>
       <div className="linha">
         <Quadrado
           conteudo={quadrados[0]}
