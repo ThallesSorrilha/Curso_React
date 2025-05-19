@@ -1,0 +1,30 @@
+.centralize-children {
+  display: grid;
+  justify-content: center;
+}
+
+.p-error {
+  color: #b22222;
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+.myForm {
+  background-color: #ddddf0;
+  padding: 4px 10px 10px 10px;
+  border-radius: 10px;
+}
+
+.myForm > * {
+  min-width: 400px;
+  margin: 1px;
+  font-size: large;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.myForm > h1 {
+    background-color: #c95f5f;
+    color: white;
+}
