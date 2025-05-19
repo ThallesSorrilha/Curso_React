@@ -38,9 +38,10 @@ function JogoDaVelha() {
         quadrados[a] === quadrados[c]
       ) {
         return quadrados[a];
-      } else if (quadrados.every((quad) => quad !== null)) {
-        return "Empate";
       }
+    }
+    if (quadrados.every((quad) => quad !== null)) {
+      return "Empate";
     }
     return null;
   }
@@ -56,6 +57,7 @@ function JogoDaVelha() {
   } else {
     estado = "Vez de: " + (x ? "X" : "O");
   }
+  console.log(estado);
 
   return (
     <div className="aplicacao centralizador">
