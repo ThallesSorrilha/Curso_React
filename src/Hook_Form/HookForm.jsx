@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { ErrorMessage } from "@hookform/error-message";
 
 import "./estilo.css";
 
@@ -20,42 +21,74 @@ function Form() {
         >
           <h1 className="centralize-children">Cadastro de Currículo</h1>
           <input
-            {...register("nome", { required: "true" })}
+            {...register("nome", {
+              maxLength: 100,
+              required: "nome é obrigatório, deve ter até 100 letras",
+            })}
             placeholder="nome completo"
             type="text"
           />
-          {errors.nome && <p className="p-error">Insira o seu nome completo</p>}
+          <ErrorMessage
+            errors={errors}
+            name="nome"
+            render={({ message }) => <p className="p-error">{message} </p>}
+          />
 
           <input
-            {...register("email", { required: "true" })}
+            {...register("email", {
+              maxLength: 100,
+              required:
+                "e-mail é obrigatório; deve conter @; até 100 caracteres",
+            })}
             placeholder="e-mail"
             type="email"
           />
-          {errors.email && <p className="p-error">Insira o seu e-mail</p>}
+          <ErrorMessage
+            errors={errors}
+            name="email"
+            render={({ message }) => <p className="p-error">{message} </p>}
+          />
 
           <input
-            {...register("idade", { required: "true", min: 0, max: 200 })}
+            {...register("idade", {
+              required: "idade é obrigatória; deve ser entre 0 e 200",
+              min: 0,
+              max: 200,
+            })}
             placeholder="idade"
             type="number"
           />
-          {errors.idade && <p className="p-error">Insira uma idade válida</p>}
+          <ErrorMessage
+            errors={errors}
+            name="idade"
+            render={({ message }) => <p className="p-error">{message} </p>}
+          />
 
-          <select {...register("funcao", { required: "true" })}>
+          <select {...register("funcao", { required: "função é obrigatória" })}>
             <option value="">Função</option>
             <option value="agricola">Agrícola</option>
             <option value="caldeira">Caldeireiro</option>
             <option value="motorista">Motorista</option>
           </select>
-          {errors.funcao && <p className="p-error">Insira a sua função</p>}
+          <ErrorMessage
+            errors={errors}
+            name="funcao"
+            render={({ message }) => <p className="p-error">{message} </p>}
+          />
 
           <textarea
             className="descricao"
-            {...register("descricao", { maxLength: 1500 })}
+            {...register("descricao", {
+              maxLength: 1500,
+              required: "Descrição não pode ter mais de 1500 caracteres",
+            })}
             placeholder="sobre você"
           ></textarea>
-          {errors.descricao && (
-            <p className="p-error">Insira a sua descrição</p>
-          )}
+          <ErrorMessage
+            errors={errors}
+            name="descricao"
+            render={({ message }) => <p className="p-error">{message} </p>}
+          />
 
           <input type="submit" />
         </form>
