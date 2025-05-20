@@ -34,11 +34,11 @@ function Form() {
           {errors.email && <p className="p-error">Insira o seu e-mail</p>}
 
           <input
-            {...register("idade", { required: "true" })}
+            {...register("idade", { required: "true", min: 0, max: 200 })}
             placeholder="idade"
             type="number"
           />
-          {errors.idade && <p className="p-error">Insira a sua idade</p>}
+          {errors.idade && <p className="p-error">Insira uma idade válida</p>}
 
           <select {...register("funcao", { required: "true" })}>
             <option value="">Função</option>
@@ -49,7 +49,8 @@ function Form() {
           {errors.funcao && <p className="p-error">Insira a sua função</p>}
 
           <textarea
-            {...register("descricao", { required: "true" })}
+            className="descricao"
+            {...register("descricao", { maxLength: 1500 })}
             placeholder="sobre você"
           ></textarea>
           {errors.descricao && (
